@@ -39,6 +39,7 @@ const userExtractor = (req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static("build"));
 
 app.use("/api/blogs/", tokenExtractor, blogRoutes);
 app.use("/api/users/", tokenExtractor, userRoutes);
